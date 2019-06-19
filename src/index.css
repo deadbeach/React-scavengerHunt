@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  height : 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -10,4 +11,143 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.board-wrapper{
+    margin : 0;
+    width  : 100%;
+    height : 100vh;
+}
+
+.board{
+    width : 80%;
+    height : 80%;
+    margin : 5% auto;
+    border: 2px solid black;
+}
+
+.board-row{
+    width  : 100%;
+    height : 10%;
+    border-top : 2px solid black;
+    box-sizing: border-box;
+    clear : right;
+}
+.board-row:first-child{
+    border-top:0px;
+}
+
+.cell{
+    float: left;
+    width : 10%;
+    height : 100%;
+    box-sizing: border-box;
+    border-right : 2px solid black;
+    background-color: green;
+}
+.cell:last-child{
+    border-right: 0px;
+}
+
+.cell.revealed {
+    background-color : white;
+}
+
+.cell.isNearItem {
+    background-color : #BB4747;
+}
+
+.cell.isFarItem {
+
+    background-color: #518580;
+}
+
+.cell.containsItem {
+    background-color: #EEC630;
+}
+
+#modal-background{
+    position : fixed;
+    top : 0;
+    right : 0;
+    bottom : 0;
+    left : 0;
+    background-color : rgba(238,238,238, 0.6)
+}
+
+#modal {
+    margin : 10% 20%;
+    width : 60%;
+    height : 60%;
+    z-index : 10;
+    position : relative;
+}
+
+#modal.modal-containsItem {
+    background-color : rgba( 238, 198, 48, 0.8 );
+}
+
+#modal.modal-isNearItem {
+    background-color : rgba( 187, 71, 39, 0.8 );
+}
+
+#modal.modal-isFarItem {
+    background-color : rgba( 81, 133, 128, 0.8 );
+}
+
+.modal-close {
+    width : 40px;
+    height : 40px;
+    position : absolute;
+    right : 40px;
+}
+
+.modal-body {
+    margin : 10%;
+}
+
+.modal-body-inner {
+    overflow : hidden;
+}
+
+.modal-body-left {
+    float : left;
+    height : 100%;
+    width : 50%;
+    left  : 0;
+}
+
+.modal-body-right {
+    float : right;
+    height : 100%;
+    width : 50%;
+    right : 0;
+}
+
+.modal-body-header h3 {
+    text-align: center;
+}
+
+.modal-footer {
+    position: absolute;
+    bottom : 30px;
+    width : 100%;
+}
+
+.modal-footer button {
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: transparent;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    width: 40%;
+    left: 30%;
+    position: relative;
+}
+
+.modal-image {
+    width : 60%;
+    height : auto;
+    margin : none;
 }
